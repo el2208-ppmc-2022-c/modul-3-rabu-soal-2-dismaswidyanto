@@ -5,7 +5,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi1.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 2 0 0 0\r\n0 3 0 0 0\r\n0 5 3 4 5\r\n0 6 4 5 6",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 2 0 0 0 \r\n0 3 0 0 0 \r\n0 5 3 4 5 \r\n0 6 4 5 6 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -15,7 +15,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi2.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 0 4 5\r\n0 0 0 5 6\r\n4 0 0 7 8",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 0 4 5 \r\n0 0 0 5 6 \r\n4 0 0 7 8 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -25,7 +25,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi3.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n3 0 5 0 0\r\n5 0 7 0 0",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n3 0 5 0 0 \r\n5 0 7 0 0 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -35,7 +35,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi4.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n1 2 0 4 5\r\n2 3 0 5 6\r\n4 5 0 7 8\r\n5 6 0 8 9",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n1 2 0 4 5 \r\n2 3 0 5 6 \r\n4 5 0 7 8 \r\n5 6 0 8 9 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -55,7 +55,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi6.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n1 0 0 0 5\r\n2 0 0 0 6\r\n3 0 0 0 7\r\n4 2 3 4 8\r\n5 6 7 8 9",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n1 0 0 0 5 \r\n2 0 0 0 6 \r\n3 0 0 0 7 \r\n4 2 3 4 8 \r\n5 6 7 8 9 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -65,7 +65,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi7.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 0 0 6\r\n0 0 0 0 7\r\n0 6 7 0 9",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 0 0 6 \r\n0 0 0 0 7 \r\n0 6 7 0 9 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -75,7 +75,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi8.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n0 0 6 7 0",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n0 0 6 7 0 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -85,7 +85,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi9.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 0 0 0\r\n0 0 0 0 0\r\n2 0 0 0 0\r\n3 0 0 0 0\r\n4 2 3 0 0",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 0 0 0 \r\n0 0 0 0 0 \r\n2 0 0 0 0 \r\n3 0 0 0 0 \r\n4 2 3 0 0 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
@@ -95,7 +95,7 @@
       "setup": "make soal-02",
       "run": "./soal-02",
       "input": "mi10.txt",
-      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5\r\n2 3 4 5 6\r\n3 4 5 6 7\r\n4 5 6 7 8\r\n5 6 7 8 9\r\nKondisi Permen Akhir:\r\n0 0 3 0 0\r\n0 0 4 0 0\r\n0 0 5 0 0\r\n0 0 6 0 0\r\n3 4 7 6 7",
+      "output": "Kondisi Permen Awal:\r\n1 2 3 4 5 \r\n2 3 4 5 6 \r\n3 4 5 6 7 \r\n4 5 6 7 8 \r\n5 6 7 8 9 \r\nKondisi Permen Akhir:\r\n0 0 3 0 0 \r\n0 0 4 0 0 \r\n0 0 5 0 0 \r\n0 0 6 0 0 \r\n3 4 7 6 7 ",
       "comparison": "included",
       "timeout": 1,
       "points": 10
