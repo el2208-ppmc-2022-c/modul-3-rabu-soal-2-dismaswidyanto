@@ -20,8 +20,11 @@
  * @param matrix matriks persegi yang akan diinisiasi 
 **/
 void fill_matrix(int dim,int matrix[dim][dim]){
-    // Isi inisialisasi fungsi
-    ...
+    for(int i=0;i<dim;i++){
+        for(int j=0;j<dim;j++){
+            *(*(matrix+i)+j) = i+j+1;
+        }
+    }
 }
 
 /** @brief fungsi digunakan untuk menampilkan matriks persegi ke terminal
@@ -38,6 +41,79 @@ void print_matrix(int dim, int matrix[dim][dim]){
     }
 }
 
+/** @brief fungsi digunakan untuk menurunkan n permen pada kolom tertentu
+ * @param dim dimensi dari matriks persegi
+ * @param matrix matriks persegi
+ * @param column kolom yang permennya akan diturunkan
+ * @param start_row baris dimulainya permen dihapus 
+ * @param step_down jumlah baris permen diturunkan
+**/
+void down_n(int dim, int matrix[dim][dim], int column, int start_row, int step_down){
+    // Fungsi 
+    for(int i=start_row;i>=0;i--){
+        if(i>step_down-1){
+            *(*(matrix+i)+column) = *(*(matrix+i-step_down)+column);
+        }
+        else{
+            *(*(matrix+i)+column) = 0;
+        }
+    }
+};
+
+/** @brief Fungsi akan mengubah susunan matriks apabila pengguna memakai magic chocolate bomb
+ * @param dim dimensi dari matriks persegi
+ * @param matrix matriks persegi
+ * @param idx_row indeks baris bom
+ * @param idx_colum indeks kolom bom
+**/
+void mi_bomb(int dim, int matrix[dim][dim], int idx_row, int idx_column){
+    int erase_row, start_row;
+    // Seleksi jumlah baris yang akan dihapus berdasarkan letak pusat bom
+    if(idx_row-1<0){
+        erase_row = 2;
+        start_row = idx_row+1;
+    }
+    else if(idx_row+1>=dim){
+        erase_row = 2;
+        start_row = idx_row;
+    }
+    else{
+        erase_row = 3;
+        start_row = idx_row+1;
+    }
+    // Seleksi jumlah kolom yang dihapus berdasakan letak pusat bom
+    if((idx_column-1)<0){
+        // printf("No column on left\n"); Print untuk debugging
+        for(int i=0;i<2;i++){
+            down_n(dim,matrix,idx_column+i,start_row,erase_row);
+        }
+    }
+    else if((idx_column+1) >= dim){
+        // printf("No column on right\n"); Print untuk debugging
+        for(int i=-1;i<1;i++){
+            down_n(dim,matrix,idx_column+i,start_row,erase_row);
+        }
+    }
+    else{
+        for(int i=-1;i<2;i++){
+            down_n(dim,matrix,idx_column+i,start_row,erase_row);
+        }
+    }
+}
+
+/** @brief Fungsi akan mengubah susunan matriks apabila pengguna memakai Double Shot Syrup
+ * @param dim dimensi dari matriks persegi
+ * @param matrix matriks persegi
+ * @param idx_row indeks baris sirup
+ * @param idx_colum indeks kolom sirup
+**/
+void mi_syrup(int dim, int matrix[dim][dim], int idx_row, int idx_column){
+    down_n(dim,matrix,idx_column,dim-1,dim);
+    for(int i=0;i<dim;i++){
+        down_n(dim,matrix,i,idx_row,1);      
+    }
+}
+
 /** @brief fungsi digunakan untuk menggunakan magic item yang ada di file eksternal
  * @param dim dimensi dari matriks persegi
  * @param matrix matriks persegi
@@ -46,10 +122,18 @@ void print_matrix(int dim, int matrix[dim][dim]){
  * @param mi_idx matriks lokasi magic item yang digunakan
 **/
 void mi_use(int dim,int matrix[dim][dim],int mi_total,char mi_type[mi_total],int mi_idx[mi_total][2]){
-	//Isi kode anda
+    for(int i=0;i<mi_total;i++){
+        // printf("row = %d, column = %d\n",mi_idx[i][0],mi_idx[i][1]);
+        if(*(mi_type+i)=='b'){
+            mi_bomb(dim,matrix,*(*(mi_idx+i)+0),*(*(mi_idx+i)+1));
+        }
+        else if(*(mi_type+i)=='s'){
+            mi_syrup(dim,matrix,*(*(mi_idx+i)+0),*(*(mi_idx+i)+1));
+        }
+        // printf("Kondisi permen saat ke %d:\n",i); // Untuk debugging
+        // print_matrix(dim,matrix); // Untuk debugging
+    }
 }
-
-// Silahkan tambahkan fungsi lain apabila diperlukan. Pastikan untuk menggunakan konsep pointer juga
 
 int main(){
     // Deklarasi variabel
@@ -58,7 +142,7 @@ int main(){
     char temp[MAX_STRING];
     char *token;
     int count = 0;
-    int n_mi_matrix; // Menyatakan jumlah magic item
+    int n_mi_matrix;
 
     // Input nama file
     printf("Masukkan nama file: ");
@@ -79,6 +163,7 @@ int main(){
     fgets(each_line,MAX_STRING,file_mi);
     strcpy(temp,each_line);
     n_mi_matrix = atoi(temp);
+    // printf("Magic Item = %d\n",n_mi_matrix);
 
     // Deklarasi matriks jenis dan indeks magic item
     // mi_matrix berisi letak (indeks baris dan kolom) dari magic item yang bersangkutan.
@@ -97,25 +182,28 @@ int main(){
             if(column == 0){
                 // Kasus untuk jenis magic item (char)
                 mi_type[count] = token[0];
+                // printf("%c ",mi_type[count]); Print untuk debugging
             }
             else{
                 // Kasus untuk indeks magic item
                 mi_matrix[count][column-1] = atoi(token);
+                // printf("%d ",mi_matrix[count][column-1]); Print untuk debugging
             }
             column += 1;
             token = strtok(NULL,",");
         }
         count+=1;
+        // printf("\n"); Print untuk debugging
     }
 
-    // Isi Program Utama
-	fill_matrix(DIM,candy_matrix);
+    // Definisikan Matriks utama
+    int candy_matrix[DIM][DIM];
+    fill_matrix(DIM,candy_matrix);
     printf("Kondisi Permen Awal:\n");
-    print_matrix(...);
-	mi_use(DIM,candy_matrix,n_mi_matrix,mi_type,mi_matrix);
+    print_matrix(DIM,candy_matrix);
+    mi_use(DIM,candy_matrix,n_mi_matrix,mi_type,mi_matrix);
     printf("Kondisi Permen Akhir:\n");
-    print_matrix(...);
-	
+    print_matrix(DIM,candy_matrix);
     fclose(file_mi);
     return 0;
 }
